@@ -1,4 +1,4 @@
-Lyfetch is a small system info script because strawberries are cute.
+Lyfetch is a small and quick system info script because strawberries are cute.
 
 ![lyfetch](./showcase.png)
 
