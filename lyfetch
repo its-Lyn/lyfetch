@@ -19,22 +19,16 @@ read -r name    < /sys/devices/virtual/dmi/id/product_name
 read -r version < /sys/devices/virtual/dmi/id/product_version
 HOST="$name $version"
 
-# Output
 echo -e "$(
-cat << EOF 
-           ${GREEN}(     (              ${MAGENTA}${NAME}${GREEN}
-          ((((  ( ((((
-           (((((((((,           ${RED}OS:${NC}      ${OS}${GREEN}
-     (((((((((((((((((((((${NC}      ${RED}Host:${NC}    ${HOST}${RED}
-      ${RED}######${GREEN}(((((((${RED}######       ${RED}Kernel:${NC}  ${KERNEL}${RED}
-     ###${YELLOW}%%${RED}###${GREEN}(((((${RED}###${YELLOW}%%${RED}###      ${RED}Shell:${NC}   ${SHELL}${RED}
-     #####################      ${RED}Uptime:${NC}  ${UPTIME}${RED}
-     ##${YELLOW}%${RED}####${YELLOW}%${RED}#####${YELLOW}%${RED}####${YELLOW}%%${RED}#      ${RED}Memory:${NC}  ${MEMORY}${RED}  
-      ###################          
-       ##${YELLOW}%%${RED}####${YELLOW}%${RED}####${YELLOW}%%${RED}##           
-        ###############            
-          ##${YELLOW}%${RED}#####${YELLOW}%${RED}##              
-            ######
-              ##${NC}
-EOF
+cat << BERRY
+      ${GREEN}(    ((       ${MAGENTA}${NAME}${GREEN}
+    ((  (((  ((     
+    ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
+   ${RED}##${YELLOW}%${RED}##${GREEN}((${RED}###${YELLOW}%${RED}##    ${RED}Host:${NC}    ${HOST}${RED}
+   ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Kernel:${NC}  ${KERNEL}${RED}
+    ##${YELLOW}%${RED}####${YELLOW}%${RED}###     ${RED}Shell:${NC}   ${SHELL}${RED}
+     ####${YELLOW}%${RED}####      ${RED}Uptime:${NC}  ${UPTIME}${RED}
+       #####        ${RED}Memory:${NC}  ${MEMORY}${RED}
+         #
+BERRY
 )"
