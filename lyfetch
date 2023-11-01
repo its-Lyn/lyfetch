@@ -19,7 +19,7 @@ read -r name    < /sys/devices/virtual/dmi/id/product_name
 read -r version < /sys/devices/virtual/dmi/id/product_version
 HOST="$name $version"
 
-echo -e "$(
+OUTPUT="$(
 cat << BERRY
       ${GREEN}(    ((       ${MAGENTA}${NAME}${GREEN}
     ((  (((  ((     
@@ -29,6 +29,8 @@ cat << BERRY
     ##${YELLOW}%${RED}####${YELLOW}%${RED}###     ${RED}Shell:${NC}   ${SHELL}${RED}
      ####${YELLOW}%${RED}####      ${RED}Uptime:${NC}  ${UPTIME}${RED}
        #####        ${RED}Memory:${NC}  ${MEMORY}${RED}
-         #
+         #${NC}
 BERRY
 )"
+
+echo -e "${OUTPUT}"
