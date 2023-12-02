@@ -12,7 +12,7 @@ PINK='\x1b[1;38;2;245;169;184m'
 WHITE='\x1b[1;97m'
 
 # Sys info
-NAME="$(whoami)@$(hostname)"
+NAME="$(whoami)@$(uname -n)"
 OS=$(awk -F= '$1 == "NAME" {gsub(/"/, "", $2); print $2}' /etc/os-release)
 KERNEL=$(uname -r)
 SHELL=$(basename $SHELL)
