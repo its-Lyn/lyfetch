@@ -19,10 +19,6 @@ SHELL=$(basename $SHELL)
 UPTIME="$(uptime -p | sed 's/up //')"
 MEMORY="$(free -m | awk 'NR==2{print $3 "M / " $2 "M"}')"
 
-read -r name    < /sys/devices/virtual/dmi/id/product_name
-read -r version < /sys/devices/virtual/dmi/id/product_version
-HOST="$name $version"
-
 if [ ! -z "$1" ]; then
   if [ "$1" != "--trans" ]; then
     echo -e "${RED}ERROR:${NC} Unknown argument: ${1}, known arguments: --trans"
@@ -34,11 +30,11 @@ cat << BERRY
 ${BLUE}      (    ((${NC}       ${MAGENTA}${NAME}${PINK}
     ((  (((  ((     
     ###(((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
-   ##%#######%##    ${RED}Host:${NC}    ${HOST}${WHITE}
-   ######%####%#${NC}    ${RED}Kernel:${NC}  ${KERNEL}${PINK}
-    ##%####%###     ${RED}Shell:${NC}   ${SHELL}${PINK}
-     ####%####      ${RED}Uptime:${NC}  ${UPTIME}${BLUE}
-       #####        ${RED}Memory:${NC}  ${MEMORY}${BLUE}
+   ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}
+   ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
+    ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
+     #####%###      ${RED}Memory:${NC}  ${MEMORY}${BLUE}
+       #####
          # ${NC}
 BERRY
 )"
@@ -49,15 +45,14 @@ fi
 
 OUTPUT="$(
 cat << BERRY
-     ${GREEN}((     (((
-      (    ((       ${MAGENTA}${NAME}${GREEN}
+${GREEN}      (    ((       ${MAGENTA}${NAME}${GREEN}
     ((  (((  ((     
     ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
-   ${RED}##${YELLOW}%${RED}#######${YELLOW}%${RED}##    ${RED}Host:${NC}    ${HOST}${RED}
-   ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Kernel:${NC}  ${KERNEL}${RED}
-    ##${YELLOW}%${RED}####${YELLOW}%${RED}###     ${RED}Shell:${NC}   ${SHELL}${RED}
-     ####${YELLOW}%${RED}####      ${RED}Uptime:${NC}  ${UPTIME}${RED}
-       #####        ${RED}Memory:${NC}  ${MEMORY}${RED}
+   ${RED}##${YELLOW}%${RED}#######${YELLOW}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
+   ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
+    ##${YELLOW}%${RED}####${YELLOW}%${RED}###     ${RED}Uptime:${NC}  ${UPTIME}${RED}
+     ####${YELLOW}%${RED}####      ${RED}Memory:${NC}  ${MEMORY}${RED}
+       ##### 
          #${NC}
 BERRY
 )"
