@@ -4,11 +4,9 @@ all:
 	@echo Run \'sudo make install\' to install lyfetch
 
 install:
-	@install -Dm 755 lyfetch $(PREFIX)/local/bin/lyfetch
-	@echo lyfetch has been installed.
+	@install -Dm 755 lyfetch $(PREFIX)/bin/lyfetch
 
 uninstall: 
-	@rm -f $(PREFIX)/local/bin/lyfetch
-	@echo lyfetch has been uninstalled.
+	@rm -f $(PREFIX)/bin/lyfetch
 
 .PHONY: install uninstall all
