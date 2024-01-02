@@ -21,7 +21,7 @@ MEMORY="$(free -m | awk 'NR==2{print $3 "M / " $2 "M"}')"
 
 if [ ! -z "$1" ]; then
   if [ "$1" != "--trans" ]; then
-    echo -e "${RED}ERROR:${NC} Unknown argument: ${1}, known arguments: --trans"
+    echo -e "${RED}ERROR:${NC} Unknown argument: ${1}, currently known arguments: --trans"
     exit 1
   fi
 
