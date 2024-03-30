@@ -16,7 +16,7 @@ NAME="$(whoami)@$(uname -n)"
 OS="$(awk -F= '$1 == "NAME" {gsub(/"/, "", $2); print $2}' /etc/os-release)"
 KERNEL=$(uname -r)
 SHELL=$(basename $SHELL)
-UPTIME="$(uptime -p | sed 's/up //')"
+UPTIME="$(awk -F'( |,|:)+' '{printf "%d hours, %d minutes\n", $1/3600, ($1%3600)/60}' /proc/uptime)"
 MEMORY="$(free -m | awk 'NR==2{print $3 "M / " $2 "M"}')"
 
 
