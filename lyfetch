@@ -11,19 +11,19 @@ BLUE="$(tput setaf 14 bold)"
 PINK="$(tput setaf 217 bold)"
 WHITE="$(tput setaf 7 bold)"
 
-# Sys info
-NAME="$(whoami)@$(uname -n)"
-OS="$(awk -F= '$1 == "NAME" {gsub(/"/, "", $2); print $2}' /etc/os-release)"
+# Sys (sus) info
+NAME=$(whoami)@$(uname -n)
+OS=$(. /etc/os-release; echo "$PRETTY_NAME" || echo "$NAME")
 KERNEL=$(uname -r)
 SHELL=$(basename $SHELL)
-UPTIME="$(awk -F'( |,|:)+' '{printf "%d hours, %d minutes\n", $1/3600, ($1%3600)/60}' /proc/uptime)"
-MEMORY="$(free -m | awk 'NR==2{print $3 "M / " $2 "M"}')"
-
+UPTIME=$(awk -F'( |,|:)+' '{printf "%d hours, %d minutes\n", $1/3600, ($1%3600)/60}' /proc/uptime)
+MEMORY=$(free -m | awk 'NR==2{print$3"/"$2"MB"}')
+SEPARATOR=$(printf %\*s ${#NAME}|tr ' ' '-')
 
 if [ -z "$1" ]
 then cat<<BERRY
 ${GREEN}      (    ((       ${MAGENTA}${NAME}${GREEN}
-    ((  (((  ((     
+    ((  (((  ((     ${SEPARATOR}
     ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
    ${RED}##${YELLOW}%${RED}#######${YELLOW}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
    ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
@@ -35,7 +35,7 @@ BERRY
 elif [ "$1" = "--trans" ]
 then cat<<BERRY
 ${BLUE}      (    ((${NC}       ${MAGENTA}${NAME}${PINK}
-    ((  (((  ((     
+    ((  (((  ((     ${SEPARATOR}
     ###(((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
