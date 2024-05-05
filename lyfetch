@@ -4,7 +4,7 @@
 RED='\e[1;31m'
 GREEN='\e[1;32m'
 MAGENTA='\e[1;35m'
-YELLOW='\e[1;33m'
+WHITE='\e[1;33m'
 NC='\e[0m'
 
 BLUE='\x1b[1;96m'
@@ -29,11 +29,11 @@ OUTPUT="$(
 cat << BERRY
 ${BLUE}      8    ((${NC}       ${MAGENTA}${NAME}${PINK}
     88  888  88     
-    ###88888###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
+    ###((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
     ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
-     #####%###      ${RED}Memory:${NC}  ${MEMORY}${BLUE}
+     #####%###      ${RED}Memory:${NC}  ${MEMORY}${GREEN}
        #####
          # ${NC}
 BERRY
@@ -48,10 +48,10 @@ cat << BERRY
 ${GREEN}      8    88       ${MAGENTA}${NAME}${GREEN}
     88  888  88     
     ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
-   ${RED}##${YELLOW}%${RED}#######${YELLOW}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
-   ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
-    ##${YELLOW}%${RED}####${YELLOW}%${RED}###     ${RED}Uptime:${NC}  ${UPTIME}${RED}
-     ####${YELLOW}%${RED}####      ${RED}Memory:${NC}  ${MEMORY}${RED}
+   ${RED}##${WHITE}%${RED}#######${WHITE}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
+   ######${WHITE}%${RED}####${WHITE}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
+    ##${WHITE}%${RED}####${WHITE}%${RED}###     ${RED}Uptime:${NC}  ${UPTIME}${RED}
+     ####${WHITE}%${RED}####      ${RED}Memory:${NC}  ${MEMORY}${RED}
        ##### 
          #${NC}
 BERRY
