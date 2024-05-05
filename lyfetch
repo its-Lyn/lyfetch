@@ -27,9 +27,9 @@ if [ ! -z "$1" ]; then
 
 OUTPUT="$(
 cat << BERRY
-${BLUE}      (    ((${NC}       ${MAGENTA}${NAME}${PINK}
-    ((  (((  ((     
-    ###(((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
+${BLUE}      8    ((${NC}       ${MAGENTA}${NAME}${PINK}
+    88  888  88     
+    ###88888###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
     ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
@@ -45,8 +45,8 @@ fi
 
 OUTPUT="$(
 cat << BERRY
-${GREEN}      (    ((       ${MAGENTA}${NAME}${GREEN}
-    ((  (((  ((     
+${GREEN}      8    88       ${MAGENTA}${NAME}${GREEN}
+    88  888  88     
     ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
    ${RED}##${YELLOW}%${RED}#######${YELLOW}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
    ######${YELLOW}%${RED}####${YELLOW}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
