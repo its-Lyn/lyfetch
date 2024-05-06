@@ -1,12 +1,12 @@
 PREFIX ?= /usr
 
 all:
-	@echo Run \'sudo make install\' to install lyfetchtermux
+	@echo Run \'sudo make install\' to install lytermux
 
 install:
-	@install -Dm 755 lyfetchtermux $(PREFIX)/bin/lyfetchtermux
+	@install -Dm 755 lyfetchtermux $(PREFIX)/bin/lytermux
 
 uninstall: 
-	@rm -f $(PREFIX)/bin/lyfetchtermux
+	@rm -f $(PREFIX)/bin/lytermux
 
 .PHONY: install uninstall all
