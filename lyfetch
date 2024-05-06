@@ -29,7 +29,7 @@ OUTPUT="$(
 cat << BERRY
 ${BLUE}      8    ((${NC}       ${MAGENTA}${NAME}${PINK}
     88  888  88     
-    ###((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
+    ###(((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
     ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
