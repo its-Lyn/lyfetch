@@ -15,7 +15,7 @@ Then run:
 ```bash
 lytermux
 ```
-To uninstall lyfetchtermux, run:
+To uninstall lytermux, run:
 ```bash
 make uninstall
 ```
