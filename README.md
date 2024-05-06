@@ -9,7 +9,7 @@ This time it's on termux because why not!
 git clone https://github.com/bikoil/lyfetch-termux
 cd lyfetch-termux
 
-sudo make install
+make install
 ```
 Then run:
 ```bash
@@ -17,5 +17,5 @@ lyfetchtermux
 ```
 To uninstall lyfetchtermux, run:
 ```bash
-sudo make uninstall
+make uninstall
 ```
