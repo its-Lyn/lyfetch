@@ -13,9 +13,10 @@ make install
 ```
 Then run:
 ```bash
-lyfetchtermux
+lytermux
 ```
 To uninstall lyfetchtermux, run:
 ```bash
 make uninstall
 ```
+- [Original Repository](https://github.com/its-lyn/lyfetch)
