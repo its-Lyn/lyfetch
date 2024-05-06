@@ -1,5 +1,6 @@
+# Lyfetch
 Lyfetch is a small and quick system info script because strawberries are cute.
-
+***
 This time it's on termux because why not!
 
 ![lyfetch](./Showcase.jpg)
