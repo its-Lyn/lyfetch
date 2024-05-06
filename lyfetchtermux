@@ -11,9 +11,16 @@ BLUE='\x1b[1;96m'
 PINK='\x1b[1;38;2;245;169;184m'
 WHITE='\x1b[1;97m'
 
+# Android Info
+android_version=$(getprop ro.build.version.release)
+device_model=$(getprop ro.product.model)
+manufacturer=$(getprop ro.product.manufacturer)
+
 # Sys info
 NAME="$(whoami)@$(uname -n)"
-OS=$(awk -F= '$1 == "NAME" {gsub(/"/, "", $2); print $2}' /etc/os-release)
+OS=$android_version
+PHONE=$manufacturer
+MODEL=$device_model
 KERNEL=$(uname -r)
 SHELL=$(basename $SHELL)
 UPTIME="$(uptime -p | sed 's/up //')"
@@ -27,15 +34,15 @@ if [ ! -z "$1" ]; then
 
 OUTPUT="$(
 cat << BERRY
-${BLUE}      8    ((${NC}       ${MAGENTA}${NAME}${PINK}
+${BLUE}      8    8${NC}       ${MAGENTA}${NAME}${PINK}
     88  888  88     
-    ###((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
+    ###((((###${NC}      ${RED}OS:${NC}  Android ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
     ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
-     #####%###      ${RED}Memory:${NC}  ${MEMORY}${GREEN}
-       #####
-         # ${NC}
+     #####%###      ${RED}Memory:${NC}  ${MEMORY}${BLUE}
+       #####        ${RED}Phone:${NC}   ${PHONE}${BLUE}
+         # ${NC}         ${RED}Model:${NC}   ${MODEL}${BLUE}
 BERRY
 )"
 
@@ -47,13 +54,13 @@ OUTPUT="$(
 cat << BERRY
 ${GREEN}      8    88       ${MAGENTA}${NAME}${GREEN}
     88  888  88     
-    ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
+    ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC} Android ${OS}${GREEN}
    ${RED}##${WHITE}%${RED}#######${WHITE}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
    ######${WHITE}%${RED}####${WHITE}%${RED}#    ${RED}Shell:${NC}   ${SHELL}${RED}
     ##${WHITE}%${RED}####${WHITE}%${RED}###     ${RED}Uptime:${NC}  ${UPTIME}${RED}
      ####${WHITE}%${RED}####      ${RED}Memory:${NC}  ${MEMORY}${RED}
-       ##### 
-         #${NC}
+       #####        ${RED}Phone:${NC}   ${PHONE}${RED}   
+         #${NC}          ${RED}Model:${NC}   ${MODEL}${RED}
 BERRY
 )"
 
