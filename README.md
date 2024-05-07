@@ -7,8 +7,8 @@ This time it's on termux because why not!
 
 ## Installation:
 ```bash
-git clone https://github.com/bikoil/lyfetch-termux
-cd lyfetch-termux
+git clone https://github.com/bikoil/lytermux
+cd lytermux
 
 make install
 ```
