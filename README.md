@@ -1,22 +1,22 @@
 # Lyfetch
 Lyfetch is a small and quick system info script because strawberries are cute.
 ***
-This time it's on termux because why not!
 
-![lyfetch](./Showcase.jpg)
+![20240508_23h15m36s_grim](https://github.com/Bikoil/lytermux/assets/139659047/43a412c9-a019-4f54-b9c9-718f9839514c)
+
 
 ## Installation:
 ```bash
-git clone https://github.com/bikoil/lytermux
-cd lytermux
+git clone https://github.com/its-lyn/lyfetch
+cd lyfetch
 
 make install
 ```
 Then run:
 ```bash
-lytermux
+lyfetch
 ```
-To uninstall lytermux, run:
+To uninstall lyfetch, run:
 ```bash
 make uninstall
 ```
