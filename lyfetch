@@ -27,7 +27,7 @@ if [ ! -z "$1" ]; then
 
 OUTPUT="$(
 cat << BERRY
-${BLUE}      8    ((${NC}       ${MAGENTA}${NAME}${PINK}
+${BLUE}      88   88${NC}       ${MAGENTA}${NAME}${PINK}
     88  888  88     
     ###(((((###${NC}     ${RED}OS:${NC}      ${OS}${WHITE}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
