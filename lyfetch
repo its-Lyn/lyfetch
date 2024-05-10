@@ -45,7 +45,7 @@ fi
 
 OUTPUT="$(
 cat << BERRY
-${GREEN}      8    88       ${MAGENTA}${NAME}${GREEN}
+${GREEN}      88   88       ${MAGENTA}${NAME}${GREEN}
     88  888  88     
     ${RED}###${GREEN}(((((${RED}###     ${RED}OS:${NC}      ${OS}${GREEN}
    ${RED}##${WHITE}%${RED}#######${WHITE}%${RED}##    ${RED}Kernel:${NC}  ${KERNEL}${RED}
