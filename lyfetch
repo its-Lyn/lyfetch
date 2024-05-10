@@ -33,7 +33,7 @@ ${BLUE}      88   88${NC}       ${MAGENTA}${NAME}${PINK}
    ##%#######%##    ${RED}Kernel:${NC}  ${KERNEL}${WHITE}
    ######%####%#${NC}    ${RED}Shell:${NC}   ${SHELL}${PINK}
     ##%####%###     ${RED}Uptime:${NC}  ${UPTIME}${PINK}
-     #####%###      ${RED}Memory:${NC}  ${MEMORY}${GREEN}
+     #####%###      ${RED}Memory:${NC}  ${MEMORY}${BLUE}
        #####
          # ${NC}
 BERRY
